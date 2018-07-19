@@ -1,0 +1,37 @@
+image: golang:1.10.3-stretch
+
+before_script:
+  - uname -a
+  - whoami
+    #- GITLAB_TOKEN="vYSe8_Dkyf2sQNFDnG8M"
+  - GITLAB_TOKEN="tJdW-NxtNx1epZtHFfbQ"
+  - GITLAB_USERNAME="gitlab-ci-token"
+        
+stages:
+  - build
+  - deploy
+
+build_PHP_image:
+    stage: build
+    image: gitlab.sdsc.edu:4567/j2dangelo/docker-devops:latest
+    variables:
+      DOCKER_HOST: tcp://localhost:2375
+    services:
+      - docker:dind
+    script:
+      - docker info
+      - docker login -u ${GITLAB_USERNAME} -p ${GITLAB_TOKEN} gitlab.sdsc.edu:4567
+      - docker-compose build
+      - docker-compose push     
+        
+#push_and_deploy:
+#    stage: build
+#    image: tmaier/docker-compose
+#    variables:
+#      DOCKER_HOST: tcp://localhost:2375
+#    services:
+#      - docker:dind
+#    script:
+#      - docker info
+
+     

@@ -1,0 +1,7 @@
+version: '3'
+services:
+    php_5.3:
+        build: .
+        image: gitlab.sdsc.edu:4567/aha/docker-apache-php53:latest
+        restart: always
+
