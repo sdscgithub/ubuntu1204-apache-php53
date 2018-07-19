@@ -3,8 +3,7 @@ image: golang:1.10.3-stretch
 before_script:
   - uname -a
   - whoami
-    #- GITLAB_TOKEN="vYSe8_Dkyf2sQNFDnG8M"
-  - GITLAB_TOKEN="tJdW-NxtNx1epZtHFfbQ"
+  - GITLAB_TOKEN="vYSe8_Dkyf2sQNFDnG8M"
   - GITLAB_USERNAME="gitlab-ci-token"
         
 stages:
