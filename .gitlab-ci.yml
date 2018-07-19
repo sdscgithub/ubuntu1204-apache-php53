@@ -3,8 +3,6 @@ image: golang:1.10.3-stretch
 before_script:
   - uname -a
   - whoami
-    #  - GITLAB_TOKEN="vYSe8_Dkyf2sQNFDnG8M"
-    #  - GITLAB_USERNAME="gitlab-ci-token"
   - GITLAB_TOKEN="zznrLXLr1skpUWCmn9s_"
   - GITLAB_USERNAME="gitlab-aha"
         
@@ -22,18 +20,7 @@ build_PHP_image:
     script:
       - docker info
       - docker login -u ${GITLAB_USERNAME} -p ${GITLAB_TOKEN} gitlab.sdsc.edu:4567
-      #- docker-compose build
-      #- docker-compose push     
       - docker build -t gitlab.sdsc.edu:4567/aha/docker-apached-php53:latest .
       - docker push gitlab.sdsc.edu:4567/aha/docker-apached-php53:latest 
-#push_and_deploy:
-#    stage: build
-#    image: tmaier/docker-compose
-#    variables:
-#      DOCKER_HOST: tcp://localhost:2375
-#    services:
-#      - docker:dind
-#    script:
-#      - docker info
 
      
