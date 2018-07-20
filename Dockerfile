@@ -6,6 +6,7 @@ MAINTAINER Anthony Ha <aha@sdsc.edu>
 RUN apt-get update && \
     apt-get install -y \
       apache2 \
+      lynx\
       php5 \
       php5-cli \
       libapache2-mod-php5 \
@@ -19,5 +20,5 @@ COPY run /usr/local/bin/run
 RUN chmod +x /usr/local/bin/run
 RUN a2enmod rewrite
 
-# EXPOSE 80
-#CMD ["/usr/local/bin/run"]
+EXPOSE 80
+CMD ["/usr/local/bin/run"]
