@@ -1,7 +1,7 @@
 FROM ubuntu:12.04
 MAINTAINER Anthony Ha <aha@sdsc.edu>
 
-VOLUME ["/var/www"]
+#VOLUME ["/var/www"]
 
 RUN apt-get update && \
     apt-get install -y \
