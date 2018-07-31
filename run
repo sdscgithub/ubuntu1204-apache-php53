@@ -10,6 +10,6 @@ echo "error_reporting = $PHP_ERROR_REPORTING" >> /etc/php5/apache2/php.ini
 echo "error_reporting = $PHP_ERROR_REPORTING" >> /etc/php5/cli/php.ini
 
 # comment out so not to start apached by default to debug
-# run should be turned on from sdnap/Dockerfile 
+# run will be turned on from sdnap/Dockerfile 
 
-#source /etc/apache2/envvars && exec /usr/sbin/apache2 -DFOREGROUND
+source /etc/apache2/envvars && exec /usr/sbin/apache2 -DFOREGROUND
