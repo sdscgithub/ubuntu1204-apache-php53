@@ -24,6 +24,8 @@ RUN chmod +x /usr/local/bin/run
 RUN a2enmod rewrite
 RUN a2enmod auth_mysql
 RUN a2enmod ssl
+RUN a2enmod ldap
+RUN a2enmod authnz_ldap
 
 EXPOSE 80
 CMD ["/usr/local/bin/run"]
