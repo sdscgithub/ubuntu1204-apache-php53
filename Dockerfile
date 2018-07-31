@@ -6,6 +6,7 @@ MAINTAINER Anthony Ha <aha@sdsc.edu>
 RUN apt-get update && \
     apt-get install -y \
       apache2 \
+      libapache2-mod-auth-mysql \
       lynx\
       php5 \
       php5-cli \
@@ -21,6 +22,8 @@ COPY run /usr/local/bin/run
 RUN cd /var/www && ls -lF && rm -rf * && ls 
 RUN chmod +x /usr/local/bin/run
 RUN a2enmod rewrite
+RUN a2enmod auth_mysql
+RUN a2enmod ssl
 
 EXPOSE 80
 CMD ["/usr/local/bin/run"]
