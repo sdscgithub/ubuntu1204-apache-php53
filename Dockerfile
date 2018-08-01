@@ -16,7 +16,7 @@ RUN apt-get update && \
       php5-mysql \
       php5-pgsql
 
-COPY apache_default /etc/apache2/sites-available/default
+#COPY apache_default /etc/apache2/sites-available/default
 COPY run /usr/local/bin/run
 
 RUN cd /var/www && ls -lF && rm -rf * && ls 
