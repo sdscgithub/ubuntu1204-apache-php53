@@ -27,5 +27,5 @@ RUN a2enmod ssl
 RUN a2enmod ldap
 RUN a2enmod authnz_ldap
 
-EXPOSE 80
-CMD ["/usr/local/bin/run"]
+EXPOSE 80 443
+#CMD ["/usr/local/bin/run"]
